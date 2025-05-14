@@ -1,0 +1,20 @@
+<button routerLink="/add-expense">+ Add Transaction</button>
+<table border [cellPadding]="8" [cellSpacing]="0">
+    <thead>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Credit</th>
+        <th>Debit</th>
+        <th>Remaining Balance</th>
+    </thead>
+    <tbody>
+       
+        <tr *ngFor="let data of expenseList">
+            <td>{{getDate(data?.date)}}</td>
+            <td>{{data?.description}}</td>
+            <td>{{data?.credit ? data.credit :'-'}}</td>
+            <td>{{data?.debit ? data.debit :'-'}}</td>
+            <td>{{data?.remaining_balance ? data.remaining_balance :0}}</td>
+        </tr>
+    </tbody>
+</table>

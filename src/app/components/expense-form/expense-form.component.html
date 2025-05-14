@@ -1,0 +1,32 @@
+<form [formGroup]="expenseForm" (ngSubmit)="submit()">
+    <div class="header">
+        <span>New Transaction</span>
+        <button routerLink="/expenses">X</button>
+    </div>
+
+    <div class="fields">
+        <label>Transaction Type</label>
+        <select formControlName="type">
+            <option value="">Select Type</option>
+            <option value="credit">Credit</option>
+            <option value="debit"> Debit</option>
+        </select>
+    </div>
+    <div class="fields">
+        <label>Amount</label>
+        <input formControlName="amount" type="number">
+    </div>
+
+    <div class="fields">
+
+        <label>Description</label>
+        <textarea formControlName="description"></textarea>
+    </div>
+
+
+    <div class="footer">
+        <button type="submit" class="btn primary">Save</button>
+        <button type="button" (click)="resetForm()" class="btn secondary">Reset</button>
+    </div>
+
+</form>
